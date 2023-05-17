@@ -6,6 +6,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
     steps:
       - run: |
           [[ -z $SECRET_TOKEN ]] && echo "I don't have SECRET_TOKEN!" && exit 1
