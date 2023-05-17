@@ -1,7 +1,7 @@
-name: test if we have SECRET_TOKEN
+name: test if we have SECRET_TOKEN in pull_request_target
 
 on:
-  workflow_call:
+  pull_request_target
 
 jobs:
   test:
@@ -12,3 +12,4 @@ jobs:
       - run: |
           [[ -z $GITHUB_TOKEN ]] && echo "I don't have GITHUB_TOKEN!" && exit 1
           exit 0
+
