@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          [[ -z $SECRET_TOKEN ]] && Echo "I don't have SECRET_TOKEN!" && exit 1
+          [[ -z $SECRET_TOKEN ]] && echo "I don't have SECRET_TOKEN!" && exit 1
           exit 0
