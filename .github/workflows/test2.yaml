@@ -10,6 +10,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
     steps:
       - run: |
+          echo "Did the update run?"
           [[ -z $GITHUB_TOKEN ]] && echo "I don't have GITHUB_TOKEN!" && exit 1
           exit 0
 
