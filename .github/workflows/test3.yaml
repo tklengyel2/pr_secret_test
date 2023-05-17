@@ -1,0 +1,15 @@
+name: test if we have SECRET_TOKEN in pull_request_target
+
+on:
+  pull_request_target
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
+    steps:
+      - run: |
+          [[ -z $GITHUB_TOKEN ]] && echo "I don't have GITHUB_TOKEN!" && exit 1
+          exit 0
+
