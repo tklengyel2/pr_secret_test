@@ -7,8 +7,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
     steps:
       - run: |
-          [[ -z $SECRET_TOKEN ]] && echo "I don't have SECRET_TOKEN!" && exit 1
+          [[ -z $GITHUB_TOKEN ]] && echo "I don't have GITHUB_TOKEN!" && exit 1
           exit 0
